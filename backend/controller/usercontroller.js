@@ -19,7 +19,7 @@ exports.registermobile = A(async (req, res, next) => {
 
   const user = await User.findOne({"phonenumber": phonenumber})
   let otp = Math.floor((1 + Math.random()) * 90000)
-  let options = { authorization: process.env.YOUR_API_KEY, message: `This Website is made by Vikas Verma Thank You to use my Website Your OTP: is ${otp}`, numbers: [phonenumber], showLogs: false }
+  let options = { authorization: process.env.YOUR_API_KEY, message: `This Website is made by SAUMYADEEP CHAKRABARTY Thank You to use my Website Your OTP: is ${otp}`, numbers: [phonenumber], showLogs: false }
   sendMessage(options).then(response => {
     if (true) {
       
@@ -88,7 +88,7 @@ exports.resendotp = A(async (req, res, next)=>{
   const user = await User.findOne({"phonenumber": req.params.id})
   let otp = Math.floor((1 + Math.random()) * 90000)
   console.log(user, otp)
-  let options = { authorization: process.env.YOUR_API_KEY, message: `This website is made my Vikas Verma Thank You to use my Website Your OTP: is ${otp}`, numbers: [req.params.id] }
+  let options = { authorization: process.env.YOUR_API_KEY, message: `This website is made byy SAUMYADEEP CHAKRABARTY Thank You to use my Website Your OTP: is ${otp}`, numbers: [req.params.id] }
 
   sendMessage(options).then(response => {
     if (response.return === true) {
